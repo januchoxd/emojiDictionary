@@ -5,6 +5,18 @@
 //  Created by janusz jas on 03.02.2017.
 //  Copyright © 2017 Janusz Pietkun. All rights reserved.
 //
+/*
+ 
+    Aby po ustawieniu w seque na Show był przycisk Back - dodalismy navigation controller do 1 viewControllera
+    ( przy zaznaczonym 1 viewControllerze -> Editor -> Embaded in - > navigation controller
+ 
+ 
+    przekazywanie emoji miedzy widokami
+    tworzenie tabeli
+    tworzenie przejscia z przyciskiem back
+ */
+
+
 
 import UIKit
 
@@ -43,6 +55,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let emoji = emojis[indexPath.row]
+        //  moveSegue - taki ndalaismy identyfier
+        performSegue(withIdentifier: "moveSegue", sender: emoji)
+        print(emoji)
+        
+        //usuwanie podświetlania wcześniej wybranek row/cell
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let VCDrugi = segue.destination as! ViewControllerDrugi
+        //odwołanie się do zmiennej emoji w klasie ViewController Drugi
+        VCDrugi.emoji = sender as! String
+        
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
