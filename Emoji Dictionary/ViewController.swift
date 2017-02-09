@@ -23,27 +23,27 @@ import UIKit
 //aby nie było błedu trzeba dodać 2 funkcje - table view nr of rows i cellfor rowa at
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     //powiązanie tableView z kontrolerem jako outlet
     @IBOutlet weak var tableViewTutej: UITableView!
-    // cmd + ctr + space - wstawianie emoji
+    
+    //tworzymy pusta tablice emojis typu Emoji - cmd + ctr + space - wstawianie emoji
     var emojis : [Emoji] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        //pierwsza zmiana przez sourceTree
-        
-        //
         tableViewTutej.dataSource = self
         tableViewTutej.delegate = self
         
+        //tu wypełniamy tablicę emojis funkcją makeEmojiArray
         emojis = makeEmojiArray()
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 10 ustala ilosc rows
+        //return  ustala ilosc rows
         return emojis.count
     }
 
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let VCDrugi = segue.destination as! ViewControllerDrugi
         //odwołanie się do zmiennej emoji w klasie ViewController Drugi
-        VCDrugi.emoji = sender as! String
+        VCDrugi.emoji = sender as! Emoji
         
         
     }
@@ -85,6 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    //funckcja po wywołaniu zwraca tablicę typu Emoji
     func  makeEmojiArray() -> [Emoji] {
         
         let emoji1 = Emoji()
@@ -95,13 +96,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let emoji2 = Emoji()
         emoji2.stringEmoji = "😃"
-        emoji2.definition = "gwizdacz"
+        emoji2.definition = "usmiech"
         emoji2.category = "ryj"
         emoji2.birthYear = 2001
         
         let emoji3 = Emoji()
         emoji3.stringEmoji = "🤡"
-        emoji3.definition = "gwizdacz"
+        emoji3.definition = "maska"
         emoji3.category = "ryj"
         emoji3.birthYear = 2002
         
@@ -113,35 +114,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let emoji5 = Emoji()
         emoji5.stringEmoji = "😘"
-        emoji5.definition = "gwizdacz"
+        emoji5.definition = "buzi"
         emoji5.category = "ryj"
         emoji5.birthYear = 2004
         
         let emoji6 = Emoji()
         emoji6.stringEmoji = "😇"
-        emoji6.definition = "gwizdacz"
+        emoji6.definition = "aniol"
         emoji6.category = "ryj"
         emoji6.birthYear = 2005
         
         let emoji7 = Emoji()
         emoji7.stringEmoji = "😱"
-        emoji7.definition = "gwizdacz"
+        emoji7.definition = "strach"
         emoji7.category = "ryj"
         emoji7.birthYear = 2006
         
         let emoji8 = Emoji()
         emoji8.stringEmoji = "😯"
-        emoji8.definition = "gwizdacz"
+        emoji8.definition = "zdziwienie"
         emoji8.category = "ryj"
         emoji8.birthYear = 2007
         
         let emoji9 = Emoji()
         emoji9.stringEmoji = "🤑"
-        emoji9.definition = "gwizdacz"
+        emoji9.definition = "jezyk"
         emoji9.category = "ryj"
         emoji9.birthYear = 2008
         
-        return [emoji1, emoji2,emoji3, emoji4,emoji5, emoji6,emoji7, emoji8,emoji9]
+        //zwracamy tablicę obiektów typu Emoji
+        return [emoji1, emoji2,emoji3, emoji4,emoji5, emoji6,emoji7, emoji8, emoji9]
     }
 
 
