@@ -26,7 +26,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //powiązanie tableView z kontrolerem jako outlet
     @IBOutlet weak var tableViewTutej: UITableView!
     // cmd + ctr + space - wstawianie emoji
-    var emojis = ["😙","😃","😁","🤡","😙","😘","😇","😱","😯","🤑"]
+    var emojis : [Emoji] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //
         tableViewTutej.dataSource = self
         tableViewTutej.delegate = self
+        
+        emojis = makeEmojiArray()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,9 +52,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print(indexPath.row)
         //tworzymy
         let cell = UITableViewCell()
-        
+        let emoji = emojis[indexPath.row]
         //dla odpowieniego nr cell/row odpowiedne emoji z tablicy o danym nr
-        cell.textLabel?.text = emojis[indexPath.row]
+        cell.textLabel?.text = emoji.stringEmoji
     
         return cell
     }
@@ -80,6 +83,65 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func  makeEmojiArray() -> [Emoji] {
+        
+        let emoji1 = Emoji()
+        emoji1.stringEmoji = "😙"
+        emoji1.definition = "gwizdacz"
+        emoji1.category = "ryj"
+        emoji1.birthYear = 2000
+        
+        let emoji2 = Emoji()
+        emoji2.stringEmoji = "😃"
+        emoji2.definition = "gwizdacz"
+        emoji2.category = "ryj"
+        emoji2.birthYear = 2001
+        
+        let emoji3 = Emoji()
+        emoji3.stringEmoji = "🤡"
+        emoji3.definition = "gwizdacz"
+        emoji3.category = "ryj"
+        emoji3.birthYear = 2002
+        
+        let emoji4 = Emoji()
+        emoji4.stringEmoji = "😙"
+        emoji4.definition = "gwizdacz"
+        emoji4.category = "ryj"
+        emoji4.birthYear = 2003
+
+        let emoji5 = Emoji()
+        emoji5.stringEmoji = "😘"
+        emoji5.definition = "gwizdacz"
+        emoji5.category = "ryj"
+        emoji5.birthYear = 2004
+        
+        let emoji6 = Emoji()
+        emoji6.stringEmoji = "😇"
+        emoji6.definition = "gwizdacz"
+        emoji6.category = "ryj"
+        emoji6.birthYear = 2005
+        
+        let emoji7 = Emoji()
+        emoji7.stringEmoji = "😱"
+        emoji7.definition = "gwizdacz"
+        emoji7.category = "ryj"
+        emoji7.birthYear = 2006
+        
+        let emoji8 = Emoji()
+        emoji8.stringEmoji = "😯"
+        emoji8.definition = "gwizdacz"
+        emoji8.category = "ryj"
+        emoji8.birthYear = 2007
+        
+        let emoji9 = Emoji()
+        emoji9.stringEmoji = "🤑"
+        emoji9.definition = "gwizdacz"
+        emoji9.category = "ryj"
+        emoji9.birthYear = 2008
+        
+        return [emoji1, emoji2,emoji3, emoji4,emoji5, emoji6,emoji7, emoji8,emoji9]
     }
 
 

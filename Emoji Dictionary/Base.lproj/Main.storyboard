@@ -63,7 +63,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYU-Sn-KhM">
-                                <rect key="frame" x="166" y="333.5" width="42" height="20.5"/>
+                                <rect key="frame" x="166" y="334" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-4T-wFN">
+                                <rect key="frame" x="149" y="405" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="birthYear: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL9-Hh-Bff">
+                                <rect key="frame" x="149" y="446" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,15 +83,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FL9-Hh-Bff" firstAttribute="centerX" secondItem="Lnf-Qm-L2U" secondAttribute="centerX" id="9Ja-aA-TEh"/>
                             <constraint firstItem="EYU-Sn-KhM" firstAttribute="top" secondItem="oaR-74-9XP" secondAttribute="bottom" constant="50" id="A1E-0L-Z5j"/>
+                            <constraint firstItem="dvJ-4T-wFN" firstAttribute="top" secondItem="EYU-Sn-KhM" secondAttribute="bottom" constant="50" id="BPr-Go-1ag"/>
                             <constraint firstItem="EYU-Sn-KhM" firstAttribute="centerX" secondItem="Lnf-Qm-L2U" secondAttribute="centerX" id="GFr-H9-gex"/>
                             <constraint firstItem="oaR-74-9XP" firstAttribute="centerX" secondItem="Lnf-Qm-L2U" secondAttribute="centerX" id="LEJ-Tr-Q04"/>
+                            <constraint firstItem="dvJ-4T-wFN" firstAttribute="centerX" secondItem="Lnf-Qm-L2U" secondAttribute="centerX" id="U8K-tb-meX"/>
                             <constraint firstItem="oaR-74-9XP" firstAttribute="top" secondItem="wwF-jz-ypU" secondAttribute="bottom" constant="100" id="tHw-Vw-vYy"/>
+                            <constraint firstItem="FL9-Hh-Bff" firstAttribute="top" secondItem="dvJ-4T-wFN" secondAttribute="bottom" constant="20" id="uM3-4Z-wCc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Labelek" destination="oaR-74-9XP" id="lmT-F2-eOj"/>
+                        <outlet property="categoryLabel" destination="dvJ-4T-wFN" id="h1r-mk-3G8"/>
                         <outlet property="opis" destination="EYU-Sn-KhM" id="jbt-LS-zy5"/>
+                        <outlet property="yearLabel" destination="FL9-Hh-Bff" id="2UG-YL-rgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riA-4I-q83" userLabel="First Responder" sceneMemberID="firstResponder"/>
